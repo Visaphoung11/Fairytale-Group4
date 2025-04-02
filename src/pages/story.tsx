@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
 import banner from "../assets/banner.png";
+import StoryGrid from "../components/StoryGrid";
 
 const AdventureBanner = () => {
   // State for filters
@@ -101,6 +102,8 @@ const AdventureBanner = () => {
           </div>
         </div>
       </div>
+      {/* Include StoryGrid to show the stories */}
+      <StoryGrid />
     </div>
   );
 };

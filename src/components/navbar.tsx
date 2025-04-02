@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../assets/logo.jpg";
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
-    <nav className="bg-white  fixed w-full top-0 z-50 shadow-lg transition-all duration-300">
+    <nav className="bg-white fixed w-full top-0 z-50 shadow-lg transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -16,25 +17,25 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-6 px-4 py-2 border border-pink-700 rounded-full">
-            <a href="#" className="hover:text-green-400">
+            <Link to="/" className="hover:text-green-400">
               Home
-            </a>
-            <a href="#" className="hover:text-green-400">
+            </Link>
+            <Link to="/story" className="hover:text-green-400">
               Story
-            </a>
-            <a href="#" className="hover:text-green-400">
+            </Link>
+            <Link to="/favorite" className="hover:text-green-400">
               Favourite
-            </a>
+            </Link>
           </div>
 
           {/* Login Section */}
           <div className="hidden lg:flex space-x-6 text-pink-700">
-            <a href="#" className="hover:text-green-400">
+            <Link to="/login" className="hover:text-green-400">
               Login
-            </a>
-            <a href="#" className="hover:text-green-400">
+            </Link>
+            <Link to="/register" className="hover:text-green-400">
               Register
-            </a>
+            </Link>
           </div>
 
           {/* Search Bar */}
@@ -67,29 +68,49 @@ const Navbar: React.FC = () => {
       >
         <ul className="flex flex-col items-center space-y-4 py-4">
           <li>
-            <a href="#" className="hover:text-green-400">
+            <Link
+              to="/"
+              className="hover:text-green-400"
+              onClick={() => setMenuOpen(false)}
+            >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-green-400">
+            <Link
+              to="/story"
+              className="hover:text-green-400"
+              onClick={() => setMenuOpen(false)}
+            >
               Story
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-green-400">
+            <Link
+              to="/favorite"
+              className="hover:text-green-400"
+              onClick={() => setMenuOpen(false)}
+            >
               Favourite
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-green-400 text-pink-700">
+            <Link
+              to="/login"
+              className="hover:text-green-400 text-pink-700"
+              onClick={() => setMenuOpen(false)}
+            >
               Login
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-green-400 text-pink-700">
+            <Link
+              to="/register"
+              className="hover:text-green-400 text-pink-700"
+              onClick={() => setMenuOpen(false)}
+            >
               Register
-            </a>
+            </Link>
           </li>
           <li>
             <input
