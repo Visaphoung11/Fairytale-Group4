@@ -1,7 +1,7 @@
-export default function App() {
-  return (
-    <div className="text-3xl text-center mt-20 font-bold text-blue-500">
-      Hello Fairy Tale Website!
-    </div>
-  );
-}
+import React from "react";
+import Navbar from "./components/navbar.tsx";
+const App = () => {
+  return <Navbar />;
+};
+
+export default App;
