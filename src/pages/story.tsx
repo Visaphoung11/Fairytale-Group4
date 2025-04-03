@@ -38,14 +38,7 @@ const AdventureBanner = () => {
 
         {/* Overlay Text */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-          {/* <h1 className="text-white text-3xl md:text-4xl font-bold mb-4">
-            Adventure Stories for Children
-          </h1>
-          <p className="text-white text-lg md:text-xl font-light">
-            Discover exciting adventure stories for children to read for free.
-            Follow the adventures of brave heroes in fantastic and mysterious
-            worlds.
-          </p> */}
+        
         </div>
       </div>
 

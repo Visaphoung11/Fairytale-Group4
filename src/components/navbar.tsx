@@ -28,12 +28,15 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Login Section */}
-          <div className="hidden lg:flex space-x-6 text-pink-700">
+          <div className="hidden lg:flex space-x-3 text-pink-700">
             <a href="#" className="hover:text-green-400">
               Login
             </a>
             <a href="#" className="hover:text-green-400">
-              Register
+              |
+            </a>
+            <a href="#" className="hover:text-green-400">
+               Register
             </a>
           </div>
 
