@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
             <Link to="/login" className="hover:text-green-400">
               Login
             </Link>
-            <Link to="/register" className="hover:text-green-400">
+            <Link to="/registerform" className="hover:text-green-400">
               Register
             </Link>
           </div>
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
           </li>
           <li>
             <Link
-              to="/register"
+              to="/registerform"
               className="hover:text-green-400 text-pink-700"
               onClick={() => setMenuOpen(false)}
             >

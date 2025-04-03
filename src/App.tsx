@@ -27,6 +27,8 @@ import Home from "./pages/Home";
 import AdventureBanner from "./pages/story"; // Ensure correct casing
 import Favorite from "./pages/Favorite";
 import Login from "./pages/Login"; // Import Login component
+import RegisterForm from "./pages/register"; // Ensure correct file extension
+import StoryDetail from "./pages/StoryDetail"; // Ensure this component exists
 
 const App: React.FC = () => {
   return (
@@ -35,9 +37,11 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/story" element={<AdventureBanner />} />
+        <Route path="/story/:id" element={<StoryDetail />} />{" "}
+        {/* ✅ Ensure this matches */}
         <Route path="/favorite" element={<Favorite />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/registerform" element={<RegisterForm />} />
       </Routes>
     </>
   );
