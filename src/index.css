@@ -1,3 +1,10 @@
+@font-face {
+  font-family: BlackAndWhitePicture;
+  src: url(../src/assets/Black_And_White_Picture/BlackAndWhitePicture-Regular.ttf);
+}
+
 @import "tailwindcss";
 
-
+@theme {
+  --font-BlackAndWhitePicture: BlackAndWhitePicture, "sans-sarif";
+}
