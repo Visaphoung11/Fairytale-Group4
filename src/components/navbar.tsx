@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex space-x-6 px-4 py-2 border border-pink-700 rounded-full">
+          <div className="hidden lg:flex space-x-6 px-4 py-2 border border-pink-700 rounded-full font-BlackAndWhitePicture">
             <Link to="/" className="hover:text-green-400">
               Home
             </Link>
@@ -29,11 +29,14 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Login Section */}
-          <div className="hidden lg:flex space-x-6 text-pink-700">
+          <div className="hidden lg:flex space-x-6 text-pink-700 font-BlackAndWhitePicture">
             <Link to="/login" className="hover:text-green-400">
               Login
             </Link>
-            <Link to="/register" className="hover:text-green-400">
+            <Link
+              to="/register"
+              className="hover:text-green-400 font-BlackAndWhitePicture"
+            >
               Register
             </Link>
           </div>
@@ -97,7 +100,7 @@ const Navbar: React.FC = () => {
           <li>
             <Link
               to="/login"
-              className="hover:text-green-400 text-pink-700"
+              className="hover:text-green-400 text-pink-700 "
               onClick={() => setMenuOpen(false)}
             >
               Login
@@ -106,7 +109,7 @@ const Navbar: React.FC = () => {
           <li>
             <Link
               to="/register"
-              className="hover:text-green-400 text-pink-700"
+              className="hover:text-green-400 text-pink-700 "
               onClick={() => setMenuOpen(false)}
             >
               Register
