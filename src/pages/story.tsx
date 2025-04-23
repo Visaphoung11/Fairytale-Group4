@@ -1,20 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import banner from "../assets/banner.png";
 import StoryGrid from "../components/StoryGrid";
-import Footer from "../components/footer"; // Ensure correct casing
+import Footer from "../components/footer";
 
 const AdventureBanner = () => {
-  // State for filters
   const [filters, setFilters] = useState({
     categories: [],
     ageGroups: [],
   });
 
-  const categories = ["Adventure", "Animals", "Classic"];
-  const ageGroups = ["5 - 10 years", "7 - 11 years", "10 - 15 years"];
+  const [categories, setCategories] = useState([]);
+  const [ageGroups, setAgeGroups] = useState([]);
 
-  // Toggle filter function
+  // Fetch story types and age ranges from the API
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [categoryRes, ageRes] = await Promise.all([
+          fetch("http://62.72.46.248:1337/api/story-types"),
+          fetch("http://62.72.46.248:1337/api/age-ranges"),
+        ]);
+
+        const categoryData = await categoryRes.json();
+        const ageData = await ageRes.json();
+
+        setCategories(categoryData.data.map((item) => item.name));
+        setAgeGroups(ageData.data.map((item) => item.label));
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const toggleFilter = (type, value) => {
     setFilters((prev) => {
       const updated = prev[type].includes(value)
@@ -24,24 +44,20 @@ const AdventureBanner = () => {
     });
   };
 
-  // Helper function to check if a filter is active
   const isActive = (type, value) => filters[type].includes(value);
 
   return (
     <div>
-      {/* Banner Section */}
+      {/* Banner */}
       <div className="relative w-full mx-auto">
-        {/* Background Image */}
         <img
           src={banner}
           alt="Adventure Storybook"
           className="w-full h-full rounded-lg shadow-lg"
         />
-
-        {/* Overlay Text */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"></div>
       </div>
-      {/* Filter Section */}
+
+      {/* Filters */}
       <div className="flex flex-col items-center p-4">
         <div className="relative w-full max-w-md mb-4">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
@@ -93,10 +109,9 @@ const AdventureBanner = () => {
           </div>
         </div>
       </div>
-      {/* Include StoryGrid to show the stories */}
+
       <StoryGrid />
-      {/* Footer Section */}
-      <Footer /> {/* Add Footer here */}
+      <Footer />
     </div>
   );
 };
