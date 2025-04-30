@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import bgImage from "../assets/image.png";
+import { useState } from "react"; // ✅ Only import useStateimport bgImage from "../assets/image.png";
 import StoryGrid from "../components/StoryGrid";
 import Footer from "../components/footer";
 import Pagination from "../components/Pagination";
+import bgImage from "../assets/image.png";
 
 const Home = () => {
   // State to track the current page

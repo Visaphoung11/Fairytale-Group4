@@ -1,4 +1,3 @@
-import React from "react";
 import StoryGrid from "../components/StoryGrid";
 import Footer from "../components/footer";
 const Favorite = () => {
